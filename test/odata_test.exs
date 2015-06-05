@@ -28,5 +28,9 @@ defmodule ODataTest do
     assert OData.Format.Types.type_name(1.0) == "Edm.Double"
     assert OData.Format.Types.type_name(1) == "Edm.Int64"
     assert OData.Format.Types.type_name("Value") == "Edm.String"
+    {date, time} = :calendar.local_time
+    assert OData.Format.Types.type_name(date) == "Edm.Date"
+    assert OData.Format.Types.type_name({date, time}) == "Edm.DateTimeOffset"
+
   end
 end
