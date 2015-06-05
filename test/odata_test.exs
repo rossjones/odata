@@ -21,4 +21,12 @@ defmodule ODataTest do
   test "Collection rows",  %{backend: backend} do
     assert OData.Backend.rows(backend, "Collection2", 0, 0) == %{}
   end
+
+  test "Check type names" do
+    assert OData.Format.Types.type_name(nil) == "Edm.Null"
+    assert OData.Format.Types.type_name(true) == "Edm.Boolean"
+    assert OData.Format.Types.type_name(1.0) == "Edm.Double"
+    assert OData.Format.Types.type_name(1) == "Edm.Int64"
+    assert OData.Format.Types.type_name("Value") == "Edm.String"
+  end
 end
