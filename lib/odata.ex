@@ -1,0 +1,2 @@
+defmodule OData do
+end
