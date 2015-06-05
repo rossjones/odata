@@ -2,6 +2,7 @@ defmodule OData.Format.Formatters do
 
   @doc """
   Renders a column name in a format that is valid XML.
+  Does not (yet) follow http://www.w3.org/TR/REC-xml/#NT-NameChar
   """
   def name(n) do
     n
