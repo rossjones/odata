@@ -31,6 +31,14 @@ defmodule ODataTest do
     {date, time} = :calendar.local_time
     assert OData.Format.Types.type_name(date) == "Edm.Date"
     assert OData.Format.Types.type_name({date, time}) == "Edm.DateTimeOffset"
-
   end
+
+  test "Formatter valid xml name" do
+    assert OData.Format.Formatters.name("valid") == "valid"
+  end
+
+  test "Invalid string is converted to valid form" do
+    assert OData.Format.Formatters.name("An Invalid String!") == "an_invalid_string"
+  end
+
 end
